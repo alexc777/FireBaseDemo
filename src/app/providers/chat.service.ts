@@ -14,7 +14,7 @@ export class ChatService {
   constructor(private afs: AngularFirestore) { }
 
   cargarMensajes(){
-    this.itemsCollection = this.afs.collection<Mensaje>('chats', ref => ref.orderBy('fecha', 'desc').limit(5));
+    this.itemsCollection = this.afs.collection<Mensaje>('chats', ref => ref.orderBy('fecha', 'asc'));//.limit(5)
 
     return this.itemsCollection.valueChanges().pipe(map((mensajes: Mensaje[]) => {
       console.log(mensajes);
@@ -23,7 +23,7 @@ export class ChatService {
   }
 
   agregarMensaje(texto:string) {
-    // TODO falta el uid del usuario
+    // TODO: falta el uid del usuario
     let mensaje: Mensaje = {
       nombre: 'Osman',
       mensaje: texto,
