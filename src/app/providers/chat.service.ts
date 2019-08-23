@@ -13,18 +13,17 @@ export class ChatService {
 
   constructor(private afs: AngularFirestore) { }
 
-  cargarMensajes(){
-    this.itemsCollection = this.afs.collection<Mensaje>('chats', ref => ref.orderBy('fecha', 'asc'));//.limit(5)
+  cargarMensajes() {
+    this.itemsCollection = this.afs.collection<Mensaje>('chats', ref => ref.orderBy('fecha', 'asc'));
 
     return this.itemsCollection.valueChanges().pipe(map((mensajes: Mensaje[]) => {
-      console.log(mensajes);
+      console.log('Get Data ', mensajes);
       this.chats = mensajes;
     }));
   }
 
-  agregarMensaje(texto:string) {
-    // TODO: falta el uid del usuario
-    let mensaje: Mensaje = {
+  agregarMensaje(texto: string) {
+    const mensaje: Mensaje = {
       nombre: 'Osman',
       mensaje: texto,
       fecha: new Date().getTime()

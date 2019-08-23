@@ -5,13 +5,6 @@
 export const environment = {
   production: false,
   firebase: {
-    // apiKey: "AIzaSyDd_jpVRte5QYdOj61Ts2TtHLnuF52aETw",
-    // authDomain: "firechat-832a4.firebaseapp.com",
-    // databaseURL: "https://firechat-832a4.firebaseio.com",
-    // projectId: "firechat-832a4",
-    // storageBucket: "firechat-832a4.appspot.com",
-    // messagingSenderId: "858661823521"
-
     apiKey: "AIzaSyCohqM_87SEurU9HHMKbLz-1yLGk8khrfs",
     authDomain: "firechat-8b62f.firebaseapp.com",
     databaseURL: "https://firechat-8b62f.firebaseio.com",
